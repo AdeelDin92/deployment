@@ -1,4 +1,4 @@
-import React  , {useEffect,useState} from "react";
+import React   from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Routing from "../components/Routing"
 
@@ -6,13 +6,11 @@ import Routing from "../components/Routing"
 
 function App() {
 
-  const [backendData , setBackendData] = useState([])
+  
 
   return (
     <>
-    {backendData.length > 0 && backendData.map((data, key) => (
-      <div key={key}>data.token</div>
-    ))}      
+   
         <Routing/>      
            
     </>

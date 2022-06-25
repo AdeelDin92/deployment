@@ -1,8 +1,5 @@
-import React,{useState} from "react";
-import {Button } from "react-bootstrap";
-import SlideTwo from "./SlideTwo";
-import FinalSlide from "./FinalSlide";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+
 
 function SlideShow({TestAnswers,setTestanswers}) {
 
@@ -35,7 +32,7 @@ function SlideShow({TestAnswers,setTestanswers}) {
         <div className="Container">
           <div className="row justify-content-around py-4">
             <div className="col-sm-6 col-md-6 col-lg-5 col-xxl-6 col-xl-5">
-              <img src="/Testing/Test1_Tumor.jpg" className="card-img-size img-fluid" ></img>
+              <img src="/Testing/Test1_Tumor.jpg" alt="tumor" className="card-img-size img-fluid" ></img>
               <div className="d-flex justify-content-center my-5">
               <label>A</label>
                 <p>
@@ -46,7 +43,7 @@ function SlideShow({TestAnswers,setTestanswers}) {
               </div>
             </div>
             <div className="col-sm-6 col-md-6 col-lg-5 col-xxl-6 col-xl-5">
-              <img src="/Testing/Test1_No_Tumor.jpg" className="card-img-size img-fluid" ></img>
+              <img src="/Testing/Test1_No_Tumor.jpg" alt="no tumor" className="card-img-size img-fluid" ></img>
               <div className="d-flex justify-content-center my-5">
               <label>B</label>
               <p>

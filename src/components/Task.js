@@ -1,17 +1,16 @@
-import React, { useRef } from "react";
-import { useNavigate, Link, Navigate } from "react-router-dom";
-import Canvas from "./Canvas";
-import { Button, Container } from "react-bootstrap";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import RegionsList from "./RegionsList";
-import useStore from "../store";
+
 
 function Task() {
   let naviagate = useNavigate();
 
   /* Navigate to Tutorial  */
   const openTutorial = () => {
-    let refrence = document.querySelector(".tutorial");
+    
     naviagate("/Tutorial2");
   };
 
@@ -24,7 +23,7 @@ function Task() {
           style={{ cursor: "pointer" }}
           onClick={openTutorial}
         >
-          Tutorial<img src="/logo.png" style={{ width: "50px" }}></img>
+          Tutorial<img src="/logo.png" alt="logo" style={{ width: "50px" }}></img>
         </h5>
         <p className="description me-5">
           Please annotate the tumors regions

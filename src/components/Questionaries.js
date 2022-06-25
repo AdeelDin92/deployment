@@ -1,10 +1,9 @@
 
-import React, { Component, useState, useRef, useEffect } from "react";
-import { Form, Button, Container } from "react-bootstrap";
-import { useNavigate, Link } from "react-router-dom";
+import React, {  useState } from "react";
+import {  Button, Container } from "react-bootstrap";
+import { useNavigate,} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
-import ReactDOM from "react-dom";
+;
 
 function Questionaries() {
   const [Questions, setQuestions] = useState({

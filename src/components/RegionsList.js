@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { SortableContainer, SortableElement } from "react-sortable-hoc";
-import { Container, Button } from "react-bootstrap";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import arrayMove from "array-move";
 import useStore from "../store";
-import BaseImage from "./BaseImage";
-import { useNavigate, Link } from "react-router-dom";
+
+
 import Canvas from "./Canvas";
 import "../styles.css";
 
@@ -52,9 +52,9 @@ function RegionList() {
   
   const setRegions = useStore((s) => s.setRegions);  
   const [showCoordinates, setShowCoordinates] = useState(false);
-  const selectedId = useStore(s => s.selectedRigionId);
-  const selectRegion = useStore(s => s.selectRegion);
- const isDrawing = useStore((state) => state.isDrawing);
+  //const selectedId = useStore(s => s.selectedRigionId);
+  //const selectRegion = useStore(s => s.selectRegion);
+ //const isDrawing = useStore((state) => state.isDrawing);
 
   
 

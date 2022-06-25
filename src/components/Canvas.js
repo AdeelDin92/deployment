@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Konva from "konva";
+import React from "react";
+
 import { Stage } from "react-konva";
 
 import Regions from "./Regions";
@@ -69,7 +69,7 @@ function limitAttributes(stage, newAttrs) {
   return { x, y, scale };
 }
 
-function Canvas({ imageSrc },{drawing}) {
+function Canvas({ imageSrc }) {
   const stageRef = React.useRef();
 
   const { width, height } = useStore((s) => ({

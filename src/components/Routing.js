@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Questionaries from "./Questionaries";
 import Description from "./Description";
 import Task from "./Task";
-import Testing from "./Testing/SlideTwo";
 import Tutorial from "./Tutorial";
 import SlideShow from "./Testing/SlideShow"
 import SlideTwo from "./Testing/SlideTwo";

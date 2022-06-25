@@ -1,5 +1,5 @@
-import React, { useState, useNavigate } from "react";
-import { Form, Button, Container } from "react-bootstrap";
+import React  from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function SlideTwo({TestAnswers,setTestanswers}){
@@ -16,14 +16,14 @@ function SlideTwo({TestAnswers,setTestanswers}){
       <div className="Container">
           <div className="row justify-content-around py-4">
             <div className="col-sm-6 col-md-6 col-lg-5 col-xxl-6 col-xl-5">
-              <img src="/Testing/Test2_Tumor.jpg" className="card-img-size img-fluid" ></img>
+              <img src="/Testing/Test2_Tumor.jpg"  alt="tumor" className="card-img-size img-fluid" ></img>
               <div className="d-flex justify-content-center my-5">
                 <input type="radio" className="ms-3" name="Q2" value="C" onChange={handleTestAnswers} ></input>
                 <label>C</label>
               </div>
             </div>
             <div className="col-sm-6 col-md-6 col-lg-5 col-xxl-6 col-xl-5">
-              <img src="/Testing/Test2_No_Tumor.jpg" className="card-img-size img-fluid" ></img>
+              <img src="/Testing/Test2_No_Tumor.jpg" alt="no tumor" className="card-img-size img-fluid" ></img>
               <div className="d-flex justify-content-center my-5">
                 <input type="radio" className="ms-3" name="Q2" value="D" onChange={handleTestAnswers}></input>
                 <label>D</label>

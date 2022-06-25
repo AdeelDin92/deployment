@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Container, FormCheck } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import FinalSlide from "./FinalSlide";
 import SlideShow from "./SlideShow";
 import SlideTwo from "./SlideTwo";
-import Task from "../Task";
-import reactDom from "react-dom";
+
 import { useNavigate } from "react-router-dom";
 
 function Test() {
@@ -45,7 +44,7 @@ function Test() {
   const navigate = useNavigate();
 
   const openTutorial = () => {
-    let refrence = document.querySelector(".tutorial");
+    
     navigate("/Tutorial1");
   };
 
@@ -89,7 +88,7 @@ function Test() {
             style={{ cursor: "pointer" }}
             onClick={openTutorial}
           >
-            Tutorial<img src="/logo.png" style={{ width: "50px" }}></img>
+            Tutorial<img src="/logo.png"  alt="logo" style={{ width: "50px" }}></img>
           </h5>
           <h5>{TestTitle[page]}</h5>
         </div>
@@ -176,7 +175,7 @@ function Test() {
 
                   if (button.checked) {
                     setPage((currentPage) => currentPage + 1);
-                    var failure = document.querySelector(".failure");
+                   
                     failure.innerText = "";
                   }
                 });

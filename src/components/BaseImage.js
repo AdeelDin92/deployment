@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Image, Layer, Stage } from "react-konva";
+import React from "react";
+import { Image, Layer } from "react-konva";
 import useImage from "use-image";
 
-import { Html } from "react-konva-utils";
+
 
 import useStore from "../store";
-import { ModalBody } from "react-bootstrap";
+
 
 function BaseImage({ imageSource }) { 
-  const [image, setImage] = useImage(`image-${imageSource}.jpg`, "photo");
+  const [image] = useImage(`image-${imageSource}.jpg`, "photo");
   const setImageSize = useStore((state) => state.setImageSize);
   const setScale = useStore((state) => state.setScale);
   const setSize = useStore((state) => state.setSize);

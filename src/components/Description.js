@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -39,7 +39,7 @@ function Description() {
           <div className="row justify-content-between">
             <div className="col-5">
               <div className="d-flex">
-                <img src="/logo.png" style={{ width: "50px" }}></img>
+                <img src="/logo.png" alt="logo" style={{ width: "50px" }}></img>
                 <h3 className="align-self-center mb-0 px-4">
                   Task Guidelines
                 </h3>
@@ -64,7 +64,7 @@ function Description() {
             </div>
             <div className="col-5">
               <div className="d-flex">
-                <img src="/logo2.png" style={{ width: "60px" }}></img>
+                <img src="/logo2.png" alt="logo" style={{ width: "60px" }}></img>
                 <h3 className="align-self-center mb-0 px-4">
                   Interface Instructions
                 </h3>

@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
-import { Button, Container } from "react-bootstrap";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useState } from "react";
+
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Tutorial() {
@@ -12,7 +12,8 @@ function Tutorial() {
       setCount((pre) => {
         setCount(pre + 1);
         let lmg = document.querySelector(".img");
-        let g = `/Slideshow/image_${pre + 1}` + `.gif`;
+         // eslint-disable-next-line
+        let g = `/Slideshow/image_${pre + 1}` + ".gif";
         lmg.src = g;
         setDisabled(false);
 
@@ -35,6 +36,7 @@ function Tutorial() {
       setCount((pre) => {
         setCount(pre - 1);
         let lmg = document.querySelector(".img");
+         // eslint-disable-next-line
         let g = `/Slideshow/image_${pre - 1}` + `.gif`;
         lmg.src = g;
         let nextBtn = document.querySelector(".sum");
@@ -62,6 +64,7 @@ function Tutorial() {
           >
             <img
               src="/Slideshow/image_0.gif"
+              alt="show2"
               className="img-fluid img"
               style={{ width: "100%", height: "100%" }}
             ></img>
