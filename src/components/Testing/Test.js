@@ -174,9 +174,11 @@ function Test() {
                   }
 
                   if (button.checked) {
+                    // eslint-disable-next-lin
                     setPage((currentPage) => currentPage + 1);
+                    var failure2 = document.querySelector(".failure");
                    
-                    failure.innerText = "";
+                    failure2.innerText = "";
                   }
                 });
               }

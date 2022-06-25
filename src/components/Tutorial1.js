@@ -6,16 +6,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Tutorial1() {
   const [count, setCount] = useState(0);
   const [disabled, setDisabled] = useState(true);
+  
+function increment() {
+    if (count <= 4){
 
-  function increment() {
-    if (count <= 4)
-      setCount((pre) => {
-        setCount(pre + 1);
+        setCount(count+1)
         let lmg = document.querySelector(".img");
-        // eslint-disable-next-line
-        let g = `/Slideshow/image_${pre + 1}` + `.gif`;
+         // eslint-disable-next-line
+        let g = `/Slideshow/image_${count + 1}` + ".gif";
         lmg.src = g;
         setDisabled(false);
+    }
 
         if (count === 2) {
           let nextBtn = document.querySelector(".sum");
@@ -28,24 +29,27 @@ function Tutorial1() {
           lmg.src = "/Slideshow/image_0.gif";
           navigate("/Test");
         }
-      });
+      ;
   }
 
   function decrement() {
-    if (count >= 0)
-      setCount((pre) => {
-        setCount(pre - 1);
-        let lmg = document.querySelector(".img");
-        // eslint-disable-next-line
-        let g = `/Slideshow/image_${pre - 1}` + `.gif`;
-        lmg.src = g;
-        let nextBtn = document.querySelector(".sum");
-        nextBtn.innerHTML = "Next";
-        setDisabled(false);
+    if (count >= 0){
+      setCount(count-1)
+      let lmg = document.querySelector(".img");
+      // eslint-disable-next-line
+     let g = `/Slideshow/image_${count- 1}` + `.gif`;
+     lmg.src = g;
+     let nextBtn = document.querySelector(".sum");
+     nextBtn.innerHTML = "Next";
+     setDisabled(false);
+
+    }
+     
+       
         if (count === 1) {
           setDisabled(true);
         }
-      });
+      ;
   }
   const navigate = useNavigate();
 
