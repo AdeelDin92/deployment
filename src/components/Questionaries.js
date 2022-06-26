@@ -26,7 +26,7 @@ function Questionaries() {
       //navigate("/Description");
      
 
-      const res = fetch("/",{
+      const res = fetch("https://crowdsourcingbackend.herokuapp.com/",{
         method:"POST",
         headers:{
           "Content-type" : "application/json"
@@ -68,7 +68,7 @@ function Questionaries() {
         style={{ minHeight: "100vh" }}
       >
         <div className="w-100" style={{ maxWidth: "1000px" }}>
-          <div className="form-container">
+          <div className="form-container" style={{height:"120vh"}}>
             <form
               onSubmit={submitForm}
               style={{ display: "flex", flexDirection: "column" }}
