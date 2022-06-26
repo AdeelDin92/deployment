@@ -26,7 +26,7 @@ function Questionaries() {
       //navigate("/Description");
      
 
-      const res = fetch("https://crowdsourcingbackend.herokuapp.com/",{
+      const res = fetch("/",{
         method:"POST",
         headers:{
           "Content-type" : "application/json"
