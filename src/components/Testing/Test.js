@@ -56,7 +56,7 @@ function Test() {
 
   function testPost () { 
       
-    const res = fetch("https://master--curious-melomakarona-2da4a4.netlify.app/Test",{
+    const res = fetch("https://crowdsourcingbackend.herokuapp.com/Test",{
       method : "POST",
       headers : {
         "Content-type" : "application/json"
