@@ -17,7 +17,7 @@ function Routing() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Questionaries />} />
+          <Route path="/Questions" element={<Questionaries />} />
           <Route path="/Description" element={<Description />} />
           <Route path="/Tutorial" element={<Tutorial />} />
           <Route path="/Tutorial1" element={<Tutorial1 />} />
