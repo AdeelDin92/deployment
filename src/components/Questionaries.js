@@ -26,7 +26,7 @@ function Questionaries() {
       //navigate("/Description");
      
 
-      const res = fetch("/",{
+      const res = fetch("https://master--curious-melomakarona-2da4a4.netlify.app/",{
         method:"POST",
         headers:{
           "Content-type" : "application/json"

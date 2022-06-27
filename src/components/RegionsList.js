@@ -126,7 +126,7 @@ function RegionList() {
             worker_id: "2374329847",
             coordinates: imageRegions
           };
-          const response = await fetch("/Task",{
+          const response = await fetch("https://master--curious-melomakarona-2da4a4.netlify.app/Task",{
             method:"POST",
             headers:{
               "Content-type" : "application/json"
