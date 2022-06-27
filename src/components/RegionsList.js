@@ -8,8 +8,7 @@ import useStore from "../store";
 
 import Canvas from "./Canvas";
 import "../styles.css";
-
-const SortableItem = SortableElement(({ region, sortIndex, onRemove }) => {
+const SortableItem = SortableElement(({ regionHash, region, sortIndex, onRemove }) => {
   return (
     <div
       className="region"
@@ -18,7 +17,7 @@ const SortableItem = SortableElement(({ region, sortIndex, onRemove }) => {
         border: `1px solid ${region.color}`,
       }}
     >
-      Region #{region.id}
+      Region #{regionHash}
       <button
         onClick={() => {
           onRemove(sortIndex);
@@ -40,15 +39,15 @@ const SortableList = SortableContainer(({ items, onRemove }) => {
           region={region}
           onRemove={onRemove}
           sortIndex={index}
+          regionHash={index + 1}
         />
       ))}
     </div>
   );
 });
-
 function RegionList() {
   const regions = useStore((s) => s.regions);
-  console.log(regions[0])
+  
   
   const setRegions = useStore((s) => s.setRegions);  
   const [showCoordinates, setShowCoordinates] = useState(false);
@@ -66,8 +65,11 @@ function RegionList() {
 
 
   //States for changing Image source on the Task page
+  //States for changing Image source on the Task page
   const [imageSrc, setImgSrc] = useState(1);
   const [disabled, setDisabled] = useState(true); // state for next and previous image
+  const [imageRegions, setImageRegions] = useState([]);
+  const [canSave, setCanSave] = useState(false); // state for next and previous image
   
   
 
@@ -81,6 +83,7 @@ function RegionList() {
     if (imageSrc === 7) {
       let nextBtn = document.querySelector(".sum");
       nextBtn.innerHTML = "Continue";
+      setCanSave(true)
     }
   };
 
@@ -106,14 +109,49 @@ function RegionList() {
   };
 
   // Function to correct region Id's
-  const idCorrect = () => {};
+  const saveCordinates = async () => {   
+    
+    if (regions.length > 0) {
+      const imageRegion = {
+        image_number: imageSrc,
+        regions
+      };
+
+      setImageRegions([...imageRegions, imageRegion])
+
+      setTimeout(async () => {
+        if (canSave) {
+          const saveData = {
+            session_id: "1382139",
+            worker_id: "2374329847",
+            coordinates: imageRegions
+          };
+          const response = await fetch("/Task",{
+            method:"POST",
+            headers:{
+              "Content-type" : "application/json"
+            },
+            body: JSON.stringify(saveData)
+          });
+  
+          console.log(imageRegions);
+          console.log('Returned response', response)
+        }
+      }, 1000)
+    }
+
+    console.log('image is ', imageSrc);
+    console.log('image regions are ', regions);
+
+  }
+
 
   //Parent function for Task page 
   const wrappedNextFunc = async () => {
     displayCordinates();
     incrementImg();
-    clearRegions();
-    idCorrect();
+    clearRegions();  
+    saveCordinates();
 
     /*---------------Backend Post request to save cordinates for Task Page----------*/
     /*
@@ -156,7 +194,7 @@ function RegionList() {
           &laquo; Previous
         </button>
         <div style={{ width: "100px" }}></div>
-        <button onClick={wrappedNextFunc} className="next sum">
+        <button onClick={wrappedNextFunc} className="next sum" disabled={regions.length === 0}>
           Next &raquo;
         </button>
         {showCoordinates && listCoordinates()}
