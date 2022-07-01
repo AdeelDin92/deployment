@@ -11,6 +11,9 @@ function Questionaries() {
     Q2: "",
     Q3: "",
     Q4: "",
+    Q5:"",
+    Q6:"",
+    Q7:""
   });
 
   const handleAnswers = (event) => {
@@ -26,7 +29,7 @@ function Questionaries() {
       //navigate("/Description");
      
 
-      const res = fetch("https://crowdsourcingbackend.herokuapp.com/",{
+      const res = fetch("/",{
         method:"POST",
         headers:{
           "Content-type" : "application/json"
@@ -35,7 +38,10 @@ function Questionaries() {
           Q1:Questions.Q1,
           Q2:Questions.Q2,
           Q3:Questions.Q3,
-          Q4:Questions.Q4
+          Q4:Questions.Q4,
+          Q5:Questions.Q5,
+          Q6:Questions.Q6,
+          Q7:Questions.Q7,
         })
       });      
       
@@ -240,6 +246,104 @@ function Questionaries() {
                   No
                 </p>
               </div>
+              <div className="mb-3">
+                <label className="mb-3">
+                Why are you willing to do this Crowdworker task? 
+                </label>
+                <p>
+                  <input
+                    type="radio"
+                    name="Q5"
+                    value="Financial benefit" 
+                    onChange={handleAnswers}
+                    className="me-2"
+                  />
+                  Financial benefit 
+                </p>
+                <p>
+                  <input
+                    type="radio"
+                    name="Q5"
+                    value="Education"
+                    onChange={handleAnswers}
+                    className="me-2"
+                  />
+                  Education 
+                </p>
+                <p>
+                  <input
+                    type="radio"
+                    name="Q5"
+                    value="For fun"
+                    onChange={handleAnswers}
+                    className="me-2"
+                  />
+                 For fun 
+                </p>
+                <p>
+                  <input
+                    type="radio"
+                    name="Q5"
+                    value="I am expected to do it"
+                    onChange={handleAnswers}
+                    className="me-2"
+                  />
+                 I am expected to do it
+                </p>                
+              </div>
+              <div className="mb-3">
+                <label className="mb-3">
+                Did you already see a histological image before?  
+                </label>
+                <p>
+                  <input
+                    type="radio"
+                    name="Q6"
+                    value="Yess" 
+                    onChange={handleAnswers}
+                    className="me-2"
+                  />
+                  Yess 
+                </p>
+                <p>
+                  <input
+                    type="radio"
+                    name="Q6"
+                    value="No" 
+                    onChange={handleAnswers}
+                    className="me-2"
+                  />
+                  No 
+                </p>
+                     
+              </div>
+              <div className="mb-3">
+                <label className="mb-3">
+                Did you already complete a (Crowdworker-) task, which deals with tumor-identification in histological images?  
+                </label>
+                <p>
+                  <input
+                    type="radio"
+                    name="Q7"
+                    value="Yess" 
+                    onChange={handleAnswers}
+                    className="me-2"
+                  />
+                  Yess 
+                </p>
+                <p>
+                  <input
+                    type="radio"
+                    name="Q7"
+                    value="No" 
+                    onChange={handleAnswers}
+                    className="me-2"
+                  />
+                  No 
+                </p>
+                     
+              </div>
+
 
               <Button
                 type="submit"
