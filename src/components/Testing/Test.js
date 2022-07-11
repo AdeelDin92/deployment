@@ -56,7 +56,7 @@ function Test() {
 
   function testPost () { 
       
-    const res = fetch("https://crowdsourcingbackend.herokuapp.com/Test",{
+    const res = fetch("/Test",{
       method : "POST",
       headers : {
         "Content-type" : "application/json"
@@ -119,44 +119,44 @@ function Test() {
               if (page === TestTitle.length - 1) {
                 if (
                   TestAnswers.Q1 === "A" &&
-                  TestAnswers.Q2 === "C" &&
-                  TestAnswers.Q3 === "E"
+                  TestAnswers.Q2 === "A" &&
+                  TestAnswers.Q3 === "A"
                 ) {
                   testPost()
                 } else if (
                   TestAnswers.Q1 === "A" &&
-                  TestAnswers.Q2 === "C" &&
-                  TestAnswers.Q3 === "F"
+                  TestAnswers.Q2 === "A" &&
+                  TestAnswers.Q3 === "B"
                 ) {
                   testPost()
                 } else if (
                   TestAnswers.Q1 === "A" &&
-                  TestAnswers.Q2 === "D" &&
-                  TestAnswers.Q3 === "E"
+                  TestAnswers.Q2 === "B" &&
+                  TestAnswers.Q3 === "A"
                 ) {
                   testPost()
                 } else if (
                   TestAnswers.Q1 === "A" &&
-                  TestAnswers.Q2 === "D" &&
-                  TestAnswers.Q3 === "F"
+                  TestAnswers.Q2 === "B" &&
+                  TestAnswers.Q3 === "B"
                 ) {
                   check();
                 } else if (
                   TestAnswers.Q1 === "B" &&
-                  TestAnswers.Q2 === "C" &&
-                  TestAnswers.Q3 === "E"
+                  TestAnswers.Q2 === "A" &&
+                  TestAnswers.Q3 === "A"
                 ) {
                  testPost()
                 } else if (
                   TestAnswers.Q1 === "B" &&
-                  TestAnswers.Q2 === "C" &&
-                  TestAnswers.Q3 === "F"
+                  TestAnswers.Q2 === "A" &&
+                  TestAnswers.Q3 === "B"
                 ) {
                   check();
                 } else if (
                   TestAnswers.Q1 === "B" &&
-                  TestAnswers.Q2 === "D" &&
-                  TestAnswers.Q3 === "E"
+                  TestAnswers.Q2 === "B" &&
+                  TestAnswers.Q3 === "A"
                 ) {
                   check();
                 } else {

@@ -7,7 +7,30 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Description() {
   const navigate = useNavigate();
   const [disabled,setDisabled] = useState(true)
-  setTimeout(() => setDisabled(false),5000)
+  //let count = 5;
+
+  const [interval,stInterval] = useState(5);
+  
+  setTimeout(beep,5000) 
+  let timeout = setInterval(function () {
+    stInterval(interval - 1)   
+   
+  },1000)
+  
+  if (interval === 0) {
+    clearInterval(timeout)
+   
+  }
+  
+
+ 
+  
+    
+  function beep() {
+    setDisabled(false);
+  }
+  
+ 
   return (
     <div
       className="body"
@@ -86,7 +109,8 @@ function Description() {
               </ul>
             </div>
           </div>
-          <div className="text-center my-3">
+          <div className="text-center my-4">Remaining time to click : {interval}</div>
+          <div className="text-center my-5">
             <button
               type="button"
               className="py-2 px-5 next"

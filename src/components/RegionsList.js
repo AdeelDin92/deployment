@@ -46,8 +46,7 @@ const SortableList = SortableContainer(({ items, onRemove }) => {
   );
 });
 function RegionList() {
-  const regions = useStore((s) => s.regions);
-  
+  const regions = useStore((s) => s.regions); 
   
   const setRegions = useStore((s) => s.setRegions);  
   const [showCoordinates, setShowCoordinates] = useState(false);
@@ -93,6 +92,7 @@ function RegionList() {
       let nextBtn = document.querySelector(".sum");
       nextBtn.innerHTML = "Next";
       setImgSrc(imageSrc - 1);
+      setRegions(regions.concat());
       setDisabled(false);
 
       if (imageSrc === 2) {
@@ -107,7 +107,7 @@ function RegionList() {
       setRegions([]);
     }, 1000);
   };
-
+  
   // Function to correct region Id's
   const saveCordinates = async () => {   
     
@@ -126,7 +126,7 @@ function RegionList() {
             worker_id: "2374329847",
             coordinates: imageRegions
           };
-          const response = await fetch("https://crowdsourcingbackend.herokuapp.com/Task",{
+          const response = await fetch("/Task",{
             method:"POST",
             headers:{
               "Content-type" : "application/json"

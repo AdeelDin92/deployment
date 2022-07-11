@@ -18,15 +18,15 @@ function SlideTwo({TestAnswers,setTestanswers}){
             <div className="col-sm-6 col-md-6 col-lg-5 col-xxl-6 col-xl-5">
               <img src="/Testing/Test2_Tumor.jpg"  alt="tumor" className="card-img-size img-fluid" ></img>
               <div className="d-flex justify-content-center my-5">
-                <input type="radio" className="ms-3" name="Q2" value="C" onChange={handleTestAnswers} ></input>
-                <label>C</label>
+                <input type="radio" className="ms-3" name="Q2" value="A" onChange={handleTestAnswers} ></input>
+                <label>A</label>
               </div>
             </div>
             <div className="col-sm-6 col-md-6 col-lg-5 col-xxl-6 col-xl-5">
               <img src="/Testing/Test2_No_Tumor.jpg" alt="no tumor" className="card-img-size img-fluid" ></img>
               <div className="d-flex justify-content-center my-5">
-                <input type="radio" className="ms-3" name="Q2" value="D" onChange={handleTestAnswers}></input>
-                <label>D</label>
+                <input type="radio" className="ms-3" name="Q2" value="B" onChange={handleTestAnswers}></input>
+                <label>B</label>
               </div>
             </div>
           </div>
