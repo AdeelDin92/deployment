@@ -126,7 +126,7 @@ function RegionList() {
             worker_id: "2374329847",
             coordinates: imageRegions
           };
-          const response = await fetch("/Task",{
+          const response = await fetch("https://crowdsourcingbackend.herokuapp.com/Task",{
             method:"POST",
             headers:{
               "Content-type" : "application/json"

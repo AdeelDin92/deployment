@@ -56,7 +56,7 @@ function Test() {
 
   function testPost () { 
       
-    const res = fetch("/Test",{
+    const res = fetch("https://crowdsourcingbackend.herokuapp.com/Test",{
       method : "POST",
       headers : {
         "Content-type" : "application/json"
