@@ -19,13 +19,13 @@ const navigate = useNavigate();
           <h1 className="text-center py-4">Tutorial</h1>
           <div className="row justify-content-evenly align-items-center" style={{height:"80vh "}}>
           <div className="col-3 ">
-            <img src="/Slideshow/image_0.gif" alt = "photo" style={{width:"100%"}}></img>
+            <img src="/Slideshow/image_0.gif" alt = "show1" style={{width:"100%"}}></img>
           </div>
           <div className="col-3">
-            <img src="/Slideshow/image_1.gif" alt = "photo" style={{width:"100%"}}></img>
+            <img src="/Slideshow/image_1.gif" alt = "slide2" style={{width:"100%"}}></img>
           </div>
           <div className="col-3">
-            <img src="/Slideshow/image_2.gif" alt = "photo" style={{width:"100%"}}></img>
+            <img src="/Slideshow/image_2.gif" alt = "show3" style={{width:"100%"}}></img>
           </div>       
 
           </div>
