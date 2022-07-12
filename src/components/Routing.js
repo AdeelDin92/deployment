@@ -11,22 +11,24 @@ import FinalSlide from "./Testing/FinalSlide";
 import Test from "./Testing/Test"
 import Tutorial1 from "./Tutorial1";
 import Tutorial2 from "./Tutorial2"
+import GenerateWorkerAndCampaignId from "./GenerateWorkerAndCampaignId";
 
 function Routing() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Questionaries />} />
-          <Route path="/Description" element={<Description />} />
-          <Route path="/Tutorial" element={<Tutorial />} />
-          <Route path="/Tutorial1" element={<Tutorial1 />} />
-          <Route path="/Tutorial2" element={<Tutorial2 />} />
-          <Route path="/Test" element={<Test />} />
-          <Route path="/SlideShow" element={<SlideShow />} />
-          <Route path="/SlideTwo" element={<SlideTwo />} />
-          <Route path="/FinalSlide" element={<FinalSlide />} />
-          <Route path="/Task" element={<Task />} />
+        <Route path="/" element={<GenerateWorkerAndCampaignId />} />
+          <Route path="/:workerId/:campaignId" element={<Questionaries />} />
+          <Route path="/:workerId/:campaignId/Description"  element={<Description />} />
+          <Route path="/:workerId/:campaignId/Tutorial" element={<Tutorial />} />
+          <Route path="/:workerId/:campaignId/Tutorial1" element={<Tutorial1 />} />
+          <Route path="/:workerId/:campaignId/Tutorial2" element={<Tutorial2 />} />
+          <Route path="/:workerId/:campaignId/Test" element={<Test />} />
+          <Route path="/:workerId/:campaignId/SlideShow" element={<SlideShow />} />
+          <Route path="/:workerId/:campaignId/SlideTwo" element={<SlideTwo />} />
+          <Route path="/:workerId/:campaignId/FinalSlide" element={<FinalSlide />} />
+          <Route path="/:workerId/:campaignId/Task" element={<Task />} />
           <Route path="/user/:Token" element={<Task />} />
         </Routes>
       </Router>

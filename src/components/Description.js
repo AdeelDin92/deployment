@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -8,6 +8,7 @@ function Description() {
   const navigate = useNavigate();
   const [disabled,setDisabled] = useState(true)
   //let count = 5;
+  const {workerId, campaignId} = useParams();
 
   const [interval,stInterval] = useState(5);
   
@@ -116,7 +117,7 @@ function Description() {
               className="py-2 px-5 next"
               disabled={disabled}
               onClick={() => {
-                navigate("/Tutorial")
+                navigate(`/${workerId}/${campaignId}/Tutorial`)
                
               }}
               

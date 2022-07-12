@@ -47,6 +47,9 @@ const SortableList = SortableContainer(({ items, onRemove }) => {
 });
 function RegionList() {
   const regions = useStore((s) => s.regions); 
+
+  const campaignId = localStorage.getItem('campaignId');
+  const workerId = localStorage.getItem('workerId');
   
   const setRegions = useStore((s) => s.setRegions);  
   const [showCoordinates, setShowCoordinates] = useState(false);
@@ -122,8 +125,8 @@ function RegionList() {
       setTimeout(async () => {
         if (canSave) {
           const saveData = {
-            session_id: "1382139",
-            worker_id: "2374329847",
+            campaign_id: campaignId,
+            worker_id: workerId,
             coordinates: imageRegions
           };
           const response = await fetch("https://crowdsourcingbackend.herokuapp.com/Task",{

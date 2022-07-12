@@ -1,11 +1,13 @@
 
 import React, {  useState } from "react";
 import {  Button, Container } from "react-bootstrap";
-import { useNavigate,} from "react-router-dom";
+import { useNavigate, useParams} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 ;
 
 function Questionaries() {
+  const {workerId, campaignId} = useParams();
+
   const [Questions, setQuestions] = useState({
     Q1: "",
     Q2: "",
@@ -51,7 +53,7 @@ function Questionaries() {
       } else {
         console.log("Questions Successfull")
         console.log(res)        
-        navigate("/Description")
+        navigate(`/${workerId}/${campaignId}/Description`)
       }
     
   }

@@ -4,7 +4,7 @@ import FinalSlide from "./FinalSlide";
 import SlideShow from "./SlideShow";
 import SlideTwo from "./SlideTwo";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 
 function Test() {
   const [page, setPage] = useState(0);
@@ -13,6 +13,8 @@ function Test() {
     Q2: "",
     Q3: "",
   });
+
+  const {workerId, campaignId} = useParams();
 
   const TestTitle = [
     "Select which image contains the tumor",
@@ -45,7 +47,7 @@ function Test() {
 
   const openTutorial = () => {
     
-    navigate("/Tutorial1");
+    navigate(`/${workerId}/${campaignId}/Tutorial1`);
   };
 
   function check() {
@@ -72,7 +74,7 @@ function Test() {
     } else {
       console.log("Test Successfull")
       console.log(res)        
-      navigate("/Task")
+      navigate(`/${workerId}/${campaignId}/Task`)
     }
   }
 

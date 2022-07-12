@@ -8,7 +8,9 @@ import useStore from "../store";
 
 
 function BaseImage({ imageSource }) { 
-  const [image] = useImage(`image-${imageSource}.jpg`, "photo");
+  
+  const [image] = useImage(`/image-${imageSource}.jpg`, "photo");
+  
   const setImageSize = useStore((state) => state.setImageSize);
   const setScale = useStore((state) => state.setScale);
   const setSize = useStore((state) => state.setSize);
@@ -21,6 +23,8 @@ function BaseImage({ imageSource }) {
     if (!image) {
       return;
     }
+    console.log('imageSrc', image);
+
     const scale = Math.min(width / image.width, height / image.height);
     setScale(scale);
     setImageSize({ width: image.width, height: image.height });

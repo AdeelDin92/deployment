@@ -1,11 +1,11 @@
 import React from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Tutorial2() {
 
-
+  const {workerId, campaignId} = useParams();
 
 
 
@@ -30,7 +30,7 @@ const navigate = useNavigate();
 
           </div>
           <div className="col text-center">
-          <button  onClick={()=>navigate("/Task")} className="next sum">
+          <button  onClick={()=>navigate(`/${workerId}/${campaignId}/Task`)} className="next sum">
               Next &raquo;
             </button>
           </div>

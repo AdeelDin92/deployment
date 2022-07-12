@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Tutorial() {
   const [count, setCount] = useState(0);
   const [disabled, setDisabled] = useState(true);
+  const {workerId, campaignId} = useParams();
 
   function increment() {
     if (count <= 4){
@@ -27,7 +28,7 @@ function Tutorial() {
           console.log("hey");
           let lmg = document.querySelector(".img");
           lmg.src = "/Slideshow/image_0.gif";
-          navigate("/Test");
+          navigate(`/${workerId}/${campaignId}/Test`);
         }
       ;
   }
