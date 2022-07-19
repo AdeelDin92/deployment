@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React,{useState} from "react";
+import { useNavigate,useParams } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import RegionsList from "./RegionsList";
@@ -7,28 +7,45 @@ import RegionsList from "./RegionsList";
 
 function Task() {
   let naviagate = useNavigate();
+  const [isActive,setActive] = useState("false");
+  const {workerId, campaignId} = useParams();
 
   /* Navigate to Tutorial  */
   const openTutorial = () => {
-    
-    naviagate("/Tutorial2");
+    setActive(!isActive);
+    //naviagate(`/${workerId}/${campaignId}/Tutorial2`);
   };
 
   return (
     <div className="container wrapper">
-      <div className="text-center">
-        <h2 className="d-inline-block">Annotation Task</h2>
-        <h5
-          className="d-inline-block ms-5 tutorial"
-          style={{ cursor: "pointer" }}
-          onClick={openTutorial}
-        >
-          Tutorial<img src="/logo.png" alt="logo" style={{ width: "50px" }}></img>
-        </h5>
-        <p className="description me-5">
-          Please annotate the tumors regions
-        </p>
+      <div className="d-flex justify-content-between mt-3">
+        <p style={{"visibility":"hidden"}}>extra</p>
+        <h2 className="d-inline-block">Annotation Task</h2> 
+        <h5 onClick={openTutorial} style={{"float":"right","marginRight":"10px"}}>Tutorial <img src="/logo.png" style={{"cursor":"pointer"}}></img></h5>     
+             
+       
+        <div className={isActive ? "tutorial" : "tt"}> 
+          <h5 style={{"float":"right" ,"marginRight":"20px"}} onClick={openTutorial}>Tutorial<img src ="/logo.png" style={{"cursor":"pointer"}}></img> </h5>     
+          <div className="row justify-content-evenly align-items-center" style={{height:"80vh "}}>
+          <div className="col-3 ">
+            <img src="/Slideshow/image_0.gif" alt = "show1" style={{width:"100%"}}></img>
+          </div>
+          <div className="col-3">
+            <img src="/Slideshow/image_1.gif" alt = "slide2" style={{width:"100%"}}></img>
+          </div>
+          <div className="col-3">
+            <img src="/Slideshow/image_2.gif" alt = "show3" style={{width:"100%"}}></img>
+          </div>       
+
+          </div>
+          
+        </div>
+       
+      
       </div>
+      <h5 className="description me-2 mb-4">
+          Please annotate the tumors regions
+        </h5>
 
       <RegionsList />
     </div>

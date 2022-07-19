@@ -8,13 +8,16 @@ import { useNavigate,useParams } from "react-router-dom";
 
 function Test() {
   const [page, setPage] = useState(0);
+  const {workerId, campaignId} = useParams();
   const [TestAnswers, setTestanswers] = useState({
+    campaign_id: campaignId,
+    worker_id: workerId,
     Q1: "",
     Q2: "",
     Q3: "",
   });
 
-  const {workerId, campaignId} = useParams();
+ 
 
   const TestTitle = [
     "Select which image contains the tumor",
@@ -119,13 +122,7 @@ function Test() {
             disabled={page === TestTitle.length}
             onClick={() => {
               if (page === TestTitle.length - 1) {
-                if (
-                  TestAnswers.Q1 === "A" &&
-                  TestAnswers.Q2 === "A" &&
-                  TestAnswers.Q3 === "A"
-                ) {
-                  testPost()
-                } else if (
+                 if (
                   TestAnswers.Q1 === "A" &&
                   TestAnswers.Q2 === "A" &&
                   TestAnswers.Q3 === "B"

@@ -124,6 +124,53 @@ input {
 
 }
 
+
+.tutorial { 
+  display: none;  
+  cursor: pointer; 
+  
+}
+.tt {
+  position:absolute;
+  background: linear-gradient(15deg, rgba(239,253,255,1) 0%, rgba(214,224,226,1) 100%);
+  width: 100%;
+  height: 80vh;
+  top:0%;
+  right:0%;
+  z-index:5;
+  cursor: pointer;
+  border-radius: 20px;
+  transition:all 1.5s ease
+
+}
+a.tip {
+  border-bottom: 1px dashed;
+  text-decoration: none
+}
+a.tip:hover {
+  cursor: help;
+  position: relative
+}
+a.tip span {
+  display: none
+}
+a.tip:hover span {
+  border: #c0c0c0 1px dotted;
+  padding: 5px 20px 5px 5px;
+  font-size: 25px;
+  color:#fff;
+  background-color:#0f80d6;
+  display: block;
+  z-index: 100; 
+  left: 0px;
+  margin: 10px;
+  width: 685px;
+  position: absolute;
+  top: 10px;
+  text-decoration: none
+}
+
+
 .zoom-container {
   position: absolute;
   top: 0;
@@ -186,6 +233,9 @@ input {
   
   
  
+}
+.group-item {
+  list-style-type: circle !important;
 }
 .img-container{
   width: 100%;

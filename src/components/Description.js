@@ -68,23 +68,23 @@ function Description() {
                   Task Guidelines
                 </h3>
               </div>
-              <ul className="list-group mt-5">
-                <li className="list-group-item py-3">
+              <ol className="list-group mt-5">
+                <li className=" py-3">
                 Fill out the questionnaire
                 </li>
-                <li className="list-group-item py-3">
+                <li className=" py-3">
                 Watch the tutorial – you can always rewatch it
                 </li>
-                <li className="list-group-item py-3">
+                <li className=" py-3">
                 Perform a quick knowledge check
                 </li>
-                <li className="list-group-item py-3">
+                <li className=" py-3">
                 Annotate the images
                 </li>
-                <li className="list-group-item py-3">
+                <li className=" py-3">
                 Receive your payment code
                 </li>                
-              </ul>
+              </ol>
             </div>
             <div className="col-5">
               <div className="d-flex">
@@ -93,21 +93,21 @@ function Description() {
                   Interface Instructions
                 </h3>
               </div>
-              <ul className="list-group mt-5"> 
-              <li className="list-group-item py-3">
+              <ol className="list-group mt-5"> 
+              <li className="py-3">
                 Press and hold left mouse button to annotate
                 </li>            
                
-                <li className="list-group-item py-3">
+                <li className="py-3">
                 Press “next image” when finished with annotating
                 </li>
-                <li className="list-group-item py-3">
+                <li className=" py-3">
                 Your progress will be saved automatically
                 </li>
-                <li className="list-group-item py-3">
-                For help, you can always rewatch the tutorial with the button “help"
+                <li className=" py-3">
+                For help, you can always rewatch click the tutorial button
                 </li>
-              </ul>
+              </ol>
             </div>
           </div>
           <div className="text-center my-4">Remaining time to click : {interval}</div>

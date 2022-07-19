@@ -77,12 +77,12 @@ function RegionList() {
 
   //Annon function for next button
   const incrementImg = () => {
-    if (imageSrc <= 7) {
+    if (imageSrc <= 4) {
       setImgSrc(imageSrc + 1);
       setDisabled(false);
     }
 
-    if (imageSrc === 7) {
+    if (imageSrc === 4) {
       let nextBtn = document.querySelector(".sum");
       nextBtn.innerHTML = "Continue";
       setCanSave(true)

@@ -37,6 +37,8 @@ function Questionaries() {
           "Content-type" : "application/json"
         },
         body:JSON.stringify({
+          campaign_id: campaignId,
+          worker_id: workerId,
           Q1:Questions.Q1,
           Q2:Questions.Q2,
           Q3:Questions.Q3,
@@ -295,7 +297,7 @@ function Questionaries() {
               </div>
               <div className="mb-3">
                 <label className="mb-3">
-                Did you already see a histological image before?  
+                Did you already see a <a className="text-nowrap tip " href="#sad">histological<span>Histological images are microscopic images of tissue.</span></a> image before?  
                 </label>
                 <p>
                   <input
@@ -305,7 +307,7 @@ function Questionaries() {
                     onChange={handleAnswers}
                     className="me-2"
                   />
-                  Yess 
+                  Yes
                 </p>
                 <p>
                   <input
@@ -331,7 +333,7 @@ function Questionaries() {
                     onChange={handleAnswers}
                     className="me-2"
                   />
-                  Yess 
+                  Yes
                 </p>
                 <p>
                   <input
