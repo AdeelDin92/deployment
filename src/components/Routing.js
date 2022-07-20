@@ -12,6 +12,7 @@ import Test from "./Testing/Test"
 import Tutorial1 from "./Tutorial1";
 import Tutorial2 from "./Tutorial2"
 import GenerateWorkerAndCampaignId from "./GenerateWorkerAndCampaignId";
+import Payment from "./Payment";
 
 function Routing() {
   return (
@@ -29,6 +30,7 @@ function Routing() {
           <Route path="/:workerId/:campaignId/SlideTwo" element={<SlideTwo />} />
           <Route path="/:workerId/:campaignId/FinalSlide" element={<FinalSlide />} />
           <Route path="/:workerId/:campaignId/Task" element={<Task />} />
+          <Route path="/:workerId/:campaignId/Payment" element={<Payment />} />
           <Route path="/user/:Token" element={<Task />} />
         </Routes>
       </Router>

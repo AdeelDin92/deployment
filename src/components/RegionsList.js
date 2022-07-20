@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { SortableContainer, SortableElement } from "react-sortable-hoc";
+import { useNavigate } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import arrayMove from "array-move";
@@ -8,6 +9,9 @@ import useStore from "../store";
 
 import Canvas from "./Canvas";
 import "../styles.css";
+
+
+
 const SortableItem = SortableElement(({ regionHash, region, sortIndex, onRemove }) => {
   return (
     <div
@@ -56,6 +60,8 @@ function RegionList() {
   //const selectedId = useStore(s => s.selectedRigionId);
   //const selectRegion = useStore(s => s.selectRegion);
  //const isDrawing = useStore((state) => state.isDrawing);
+ const navigate = useNavigate();
+ 
 
   
 
@@ -72,20 +78,28 @@ function RegionList() {
   const [disabled, setDisabled] = useState(true); // state for next and previous image
   const [imageRegions, setImageRegions] = useState([]);
   const [canSave, setCanSave] = useState(false); // state for next and previous image
+  const [clicks,setClicks] = useState(0)
   
   
 
   //Annon function for next button
   const incrementImg = () => {
-    if (imageSrc <= 4) {
+    if (imageSrc <= 3) {
       setImgSrc(imageSrc + 1);
+      setClicks(clicks + 1);
       setDisabled(false);
     }
 
     if (imageSrc === 4) {
+      setImgSrc(imageSrc + 1);      
       let nextBtn = document.querySelector(".sum");
       nextBtn.innerHTML = "Continue";
       setCanSave(true)
+      setClicks(clicks + 1);
+      //navigate(`/${workerId}/${campaignId}/Payment`)
+    }
+    if (clicks === 4) {
+      navigate(`/${workerId}/${campaignId}/Payment`)
     }
   };
 
@@ -145,6 +159,7 @@ function RegionList() {
 
     console.log('image is ', imageSrc);
     console.log('image regions are ', regions);
+    console.log("number of cliks are" , clicks)
 
   }
 

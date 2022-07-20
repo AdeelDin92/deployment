@@ -22,6 +22,8 @@ export default function GenerateWorkerAndCampaignId() {
 
 const setLocalHost = () => {
   localStorage.setItem('campaignId', 'c781');
+  const storage=localStorage.length;
+  console.log(storage)
 
   if (!localStorage.getItem('workerId')) {
     const uuid = uuidv4();

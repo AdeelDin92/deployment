@@ -9,6 +9,8 @@ function Questionaries() {
   const {workerId, campaignId} = useParams();
 
   const [Questions, setQuestions] = useState({
+    campaign_id: campaignId,
+    worker_id: workerId,
     Q1: "",
     Q2: "",
     Q3: "",
@@ -29,6 +31,7 @@ function Questionaries() {
       e.preventDefault();
       //console.log(Questions);
       //navigate("/Description");
+      //https://crowdsourcingbackend.herokuapp.com/
      
 
       const res = fetch("https://crowdsourcingbackend.herokuapp.com/",{

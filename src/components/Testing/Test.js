@@ -67,6 +67,8 @@ function Test() {
         "Content-type" : "application/json"
       },
       body:JSON.stringify({
+        campaign_id: campaignId,
+        worker_id: workerId,
         Q1 : TestAnswers.Q1,
         Q2 : TestAnswers.Q2,
         Q3 : TestAnswers.Q3

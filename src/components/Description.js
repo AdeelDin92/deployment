@@ -54,7 +54,7 @@ function Description() {
         </div>
         <div className="col-12 mt-5 ">
           <p>
-            In this task, you are going to detect and annotate tumor in ten
+            In this task, you are going to detect and annotate tumor in 5
             different images.
           </p>
         </div>
