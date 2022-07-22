@@ -35,7 +35,10 @@ function Task() {
           </div>
           <div className="col-3">
             <img src="/Slideshow/image_2.gif" alt = "show3" style={{width:"100%"}}></img>
-          </div>       
+          </div> 
+          <div className="col-3">
+            <img src="/Slideshow/image_2.gif" alt = "show4" style={{width:"100%"}}></img>
+          </div>        
 
           </div>
           

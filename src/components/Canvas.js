@@ -1,4 +1,5 @@
 import React from "react";
+import Konva from "konva"
 
 import { Stage } from "react-konva";
 
@@ -106,7 +107,7 @@ function Canvas({ imageSrc }) {
           const point = getRelativePointerPosition(e.target.getStage());
           const region = {
             id: id++,
-            color: "#F13E3E",
+            color: Konva.Util.getRandomColor(),
             points: [point],
           };
           setRegions(regions.concat([region]));

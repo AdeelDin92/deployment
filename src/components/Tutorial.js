@@ -4,28 +4,30 @@ import { useNavigate,useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Tutorial() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
+  const[imgSrc,setimgSrc] = useState(0)
   const [disabled, setDisabled] = useState(true);
   const {workerId, campaignId} = useParams();
 
   function increment() {
-    if (count <= 4){
-
+    if (imgSrc <= 3){
         setCount(count+1)
+        setimgSrc(imgSrc +1)
         let lmg = document.querySelector(".img");
          // eslint-disable-next-line
-        let g = `/Slideshow/image_${count + 1}` + ".gif";
+        let g = `/Slideshow/image_${imgSrc + 1}` + ".gif";
         lmg.src = g;
         setDisabled(false);
+        console.log(count)
     }
 
-        if (count === 2) {
+        if (count === 3) {
+          setCount(count+1)
           let nextBtn = document.querySelector(".sum");
           console.log(count);
           nextBtn.innerHTML = "Continue";
         }
-        if (count === 3) {
-          console.log("hey");
+        if (count === 4) {         
           let lmg = document.querySelector(".img");
           lmg.src = "/Slideshow/image_0.gif";
           navigate(`/${workerId}/${campaignId}/Test`);
@@ -34,20 +36,22 @@ function Tutorial() {
   }
 
   function decrement() {
-    if (count >= 0){
+    if (count >= 1){
       setCount(count-1)
+      setimgSrc(imgSrc - 1)
       let lmg = document.querySelector(".img");
       // eslint-disable-next-line
-     let g = `/Slideshow/image_${count- 1}` + `.gif`;
+     let g = `/Slideshow/image_${imgSrc- 1}` + `.gif`;
      lmg.src = g;
      let nextBtn = document.querySelector(".sum");
      nextBtn.innerHTML = "Next";
      setDisabled(false);
+     
 
     }
      
        
-        if (count === 1) {
+        if (count === 2) {
           setDisabled(true);
         }
       ;
@@ -61,7 +65,7 @@ function Tutorial() {
         style={{ backgroundColor: "#FFFFFF", width: "100%", height: "100vh" }}
       >
         <h1 className="text-center pt-5 mb-5 fw-bold">Tutorial</h1>
-        <p className="text-center">Showing {count}/3</p>
+        <p className="text-center">Showing {count}/4</p>
         <div className="container">
           <div
             className="col-6 mx-auto"

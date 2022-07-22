@@ -300,7 +300,7 @@ function Questionaries() {
               </div>
               <div className="mb-3">
                 <label className="mb-3">
-                Did you already see a <a className="text-nowrap tip " href="#sad">histological<span>Histological images are microscopic images of tissue.</span></a> image before?  
+                Did you already see a <a className="text-nowrap tip " href="#sad">histological<span>Histological images show microscopic structures of cells and tissues.</span></a> image before?  
                 </label>
                 <p>
                   <input

@@ -177,8 +177,7 @@ function Test() {
                   if (button.checked) {
                     // eslint-disable-next-lin
                     setPage((currentPage) => currentPage + 1);
-                    var failure2 = document.querySelector(".failure");
-                   
+                    var failure2 = document.querySelector(".failure");                   
                     failure2.innerText = "";
                   }
                 });
