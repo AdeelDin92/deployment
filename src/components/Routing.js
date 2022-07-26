@@ -11,7 +11,7 @@ import FinalSlide from "./Testing/FinalSlide";
 import Test from "./Testing/Test"
 import Tutorial1 from "./Tutorial1";
 import Tutorial2 from "./Tutorial2"
-/*import GenerateWorkerAndCampaignId from "./GenerateWorkerAndCampaignId";*/
+import GenerateWorkerAndCampaignId from "./GenerateWorkerAndCampaignId";
 import Payment from "./Payment";
 
 function Routing() {
@@ -19,7 +19,7 @@ function Routing() {
     <>
       <Router>
         <Routes> 
-               
+        <Route path="/:worker_id/:campaign_id/" element={<GenerateWorkerAndCampaignId />} />
           <Route path="/:worker_id/:campaign_id/" element={<Questionaries />} />
           <Route path="/:worker_id/:campaign_id/Description"  element={<Description />} />
           <Route path="/:worker_id/:campaign_id/Tutorial" element={<Tutorial />} />
