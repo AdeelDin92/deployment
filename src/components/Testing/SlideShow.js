@@ -31,7 +31,7 @@ function SlideShow({ TestAnswers, setTestanswers }) {
             className="card-img-size img-fluid"
             
           ></img>
-          <div className="d-flex justify-content-center my-5">
+          <div className="d-flex justify-content-center my-3">
             <label>A</label>
             <p>
               <input

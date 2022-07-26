@@ -19,7 +19,7 @@ function Task() {
   return (
     <div className="container wrapper">
       <div className="d-flex justify-content-between mt-3">
-        <p style={{"visibility":"hidden"}}>extra</p>
+        <p style={{"visibility":"hidden" , "width":"125px"}}>extra</p>
         <h2 className="d-inline-block">Annotation Task</h2> 
         <h5 onClick={openTutorial} style={{"float":"right","marginRight":"10px"}}>Tutorial <img src="/logo.png" alt="opentutorial" style={{"cursor":"pointer"}}></img></h5>     
              

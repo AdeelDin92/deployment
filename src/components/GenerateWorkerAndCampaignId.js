@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+/*import React, { useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router-dom";
 
@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 export default function GenerateWorkerAndCampaignId() {
   setLocalHost();
 
-  const campaignId = localStorage.getItem('campaignId');
-  const workerId = localStorage.getItem('workerId');
+  const campaign_id = localStorage.getItem('campaign_id');
+  const worker_id = localStorage.getItem('worker_id');
 
   const navigate = useNavigate();
    
   useEffect(() => {
-    navigate(`/${workerId}/${campaignId}`, { replace: true });
+    navigate(`/${worker_id}/${campaign_id}`, { replace: true });
     // eslint-disable-next-line
   }, []);
     
@@ -22,13 +22,16 @@ export default function GenerateWorkerAndCampaignId() {
   )
 }
 
+
 const setLocalHost = () => {
-  localStorage.setItem('campaignId', 'c781');
+  localStorage.setItem('campaign_id', 'c781');
   const storage=localStorage.length;
   console.log(storage)
 
-  if (!localStorage.getItem('workerId')) {
+  if (!localStorage.getItem('worker_id')) {
     const uuid = uuidv4();
-    localStorage.setItem('workerId', uuid);
+    localStorage.setItem('worker_id', uuid);
   }
 }
+
+*/

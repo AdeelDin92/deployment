@@ -4,20 +4,18 @@ import FinalSlide from "./FinalSlide";
 import SlideShow from "./SlideShow";
 import SlideTwo from "./SlideTwo";
 
-import { useNavigate,useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Test() {
   const [page, setPage] = useState(0);
-  const {workerId, campaignId} = useParams();
+  const { worker_id, campaign_id } = useParams();
   const [TestAnswers, setTestanswers] = useState({
-    campaign_id: campaignId,
-    worker_id: workerId,
+    worker_id: worker_id,
+    campaign_id: campaign_id,
     Q1: "",
     Q2: "",
     Q3: "",
   });
-
- 
 
   const TestTitle = [
     "Select which image contains the tumor",
@@ -49,37 +47,34 @@ function Test() {
   const navigate = useNavigate();
 
   const openTutorial = () => {
-    
-    navigate(`/${workerId}/${campaignId}/Tutorial1`);
+    navigate(`/${worker_id}/${campaign_id}/Tutorial1`);
   };
 
   function check() {
     var failure = document.querySelector(".failure");
     failure.innerText = "Test failed please watch the tutorial again";
-   
   }
 
-  function testPost () { 
-      
-    const res = fetch("https://crowdsourcingbackend.herokuapp.com/Test",{
-      method : "POST",
-      headers : {
-        "Content-type" : "application/json"
+  function testPost() {
+    const res = fetch("https://crowdsourcingbackend.herokuapp.com/:worker_id/:campaign_id/Test", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
       },
-      body:JSON.stringify({
-        campaign_id: campaignId,
-        worker_id: workerId,
-        Q1 : TestAnswers.Q1,
-        Q2 : TestAnswers.Q2,
-        Q3 : TestAnswers.Q3
-      })      
-    })
-    if (res.status === 404 ) {
-      window.alert("Testing Failed")
+      body: JSON.stringify({
+        campaign_id: campaign_id,
+        worker_id: worker_id,
+        Q1: TestAnswers.Q1,
+        Q2: TestAnswers.Q2,
+        Q3: TestAnswers.Q3,
+      }),
+    });
+    if (res.status === 404) {
+      window.alert("Testing Failed");
     } else {
-      console.log("Test Successfull")
-      console.log(res)        
-      navigate(`/${workerId}/${campaignId}/Task`)
+      console.log("Test Successfull");
+      console.log(res);
+      navigate(`/${worker_id}/${campaign_id}/Task`);
     }
   }
 
@@ -95,18 +90,13 @@ function Test() {
             style={{ cursor: "pointer" }}
             onClick={openTutorial}
           >
-            Tutorial<img src="/logo.png"  alt="logo" style={{ width: "50px" }}></img>
+            Tutorial<img src="/logo.png" alt="logo"></img>
           </h5>
           <h5>{TestTitle[page]}</h5>
         </div>
-        <div className="body cc" style={{ flex: "60%" }}>
-          {PageDisplay()}
-        </div>
-        <div
-          className="text-center failure mb-4"
-          style={{ color: "red" }}
-        ></div>
-        <div className="footer mb-4">
+        <div className="body2">{PageDisplay()}</div>
+        <div className="text-center failure mb-4"></div>
+        <div className="btn-col  d-flex">
           <button
             className="previous"
             disabled={page === 0}
@@ -124,18 +114,18 @@ function Test() {
             disabled={page === TestTitle.length}
             onClick={() => {
               if (page === TestTitle.length - 1) {
-                 if (
+                if (
                   TestAnswers.Q1 === "A" &&
                   TestAnswers.Q2 === "A" &&
                   TestAnswers.Q3 === "B"
                 ) {
-                  testPost()
+                  testPost();
                 } else if (
                   TestAnswers.Q1 === "A" &&
                   TestAnswers.Q2 === "B" &&
                   TestAnswers.Q3 === "A"
                 ) {
-                  testPost()
+                  testPost();
                 } else if (
                   TestAnswers.Q1 === "A" &&
                   TestAnswers.Q2 === "B" &&
@@ -147,7 +137,7 @@ function Test() {
                   TestAnswers.Q2 === "A" &&
                   TestAnswers.Q3 === "A"
                 ) {
-                 testPost()
+                  testPost();
                 } else if (
                   TestAnswers.Q1 === "B" &&
                   TestAnswers.Q2 === "A" &&
@@ -177,7 +167,7 @@ function Test() {
                   if (button.checked) {
                     // eslint-disable-next-lin
                     setPage((currentPage) => currentPage + 1);
-                    var failure2 = document.querySelector(".failure");                   
+                    var failure2 = document.querySelector(".failure");
                     failure2.innerText = "";
                   }
                 });

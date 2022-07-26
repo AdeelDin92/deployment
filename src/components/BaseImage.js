@@ -23,7 +23,7 @@ function BaseImage({ imageSource }) {
     if (!image) {
       return;
     }
-    console.log('imageSrc', image);
+    /*console.log('imageSrc', image);*/
 
     const scale = Math.min(width / image.width, height / image.height);
     setScale(scale);

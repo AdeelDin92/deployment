@@ -7,7 +7,7 @@ function Tutorial() {
   const [count, setCount] = useState(1);
   const[imgSrc,setimgSrc] = useState(0)
   const [disabled, setDisabled] = useState(true);
-  const {workerId, campaignId} = useParams();
+  const {worker_id, campaign_id} = useParams();
 
   function increment() {
     if (imgSrc <= 3){
@@ -30,7 +30,7 @@ function Tutorial() {
         if (count === 4) {         
           let lmg = document.querySelector(".img");
           lmg.src = "/Slideshow/image_0.gif";
-          navigate(`/${workerId}/${campaignId}/Test`);
+          navigate(`/${worker_id}/${campaign_id}/Test`);
         }
       ;
   }
@@ -61,15 +61,15 @@ function Tutorial() {
   return (
     <div style={{ backgroundColor: "#F0F3F4" }}>
       <div
-        className="container"
+        className="container tutorial-container"
         style={{ backgroundColor: "#FFFFFF", width: "100%", height: "100vh" }}
       >
-        <h1 className="text-center pt-5 mb-5 fw-bold">Tutorial</h1>
+        <h1 className="text-center pt-4 mb-5 fw-bold">Tutorial</h1>
         <p className="text-center">Showing {count}/4</p>
         <div className="container">
           <div
-            className="col-6 mx-auto"
-            style={{ border: "solid 1px black", height: "500px" }}
+            className="col-lgl-6 col-xxl-6 mx-auto"
+            style={{ border: "solid 1px black" }}
           >
             <img
               src="/Slideshow/image_0.gif"
@@ -78,7 +78,7 @@ function Tutorial() {
               style={{ width: "100%", height: "100%" }}
             ></img>
           </div>
-          <div className="col-3 mx-auto mt-5 d-flex">
+          <div className="btn-col  mx-auto mt-5 d-flex">
             <button
               onClick={decrement}
               className="previous sub"

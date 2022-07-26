@@ -8,7 +8,7 @@ function Description() {
   const navigate = useNavigate();
   const [disabled,setDisabled] = useState(true)
   //let count = 5;
-  const {workerId, campaignId} = useParams();
+  const {worker_id, campaign_id} = useParams();
 
   const [interval,stInterval] = useState(5);
   
@@ -36,8 +36,7 @@ function Description() {
     <div
       className="body"
       style={{
-        backgroundColor: "#FFFFF",
-        height: "100vh",
+        backgroundColor: "#FFFFF",       
         width: "100%",
         overflow: "hidden",
       }}
@@ -47,8 +46,7 @@ function Description() {
           <div className="col-12 mt-5">
             <h1 className="text-center fw-medium">General Information</h1>
           </div>
-        </Container>
-        <div style={{ height: "2rem" }}></div>
+        </Container>       
         <div className="col-12 mt-6">
           <h3>Task Description</h3>
         </div>
@@ -59,11 +57,11 @@ function Description() {
           </p>
         </div>
         <div style={{ height: "1.5rem" }}></div>
-        <Container>
+        <Container className="Description-list">
           <div className="row justify-content-between">
             <div className="col-5">
               <div className="d-flex">
-                <img src="/logo.png" alt="logo" style={{ width: "50px" }}></img>
+                <img src="/logo.png" alt="logo" ></img>
                 <h3 className="align-self-center mb-0 px-4">
                   Task Guidelines
                 </h3>
@@ -88,7 +86,7 @@ function Description() {
             </div>
             <div className="col-5">
               <div className="d-flex">
-                <img src="/logo2.png" alt="logo" style={{ width: "60px" }}></img>
+                <img src="/logo2.png" alt="logo" ></img>
                 <h3 className="align-self-center mb-0 px-4">
                   Interface Instructions
                 </h3>
@@ -117,7 +115,7 @@ function Description() {
               className="py-2 px-5 next"
               disabled={disabled}
               onClick={() => {
-                navigate(`/${workerId}/${campaignId}/Tutorial`)
+                navigate(`/${worker_id}/${campaign_id}/Tutorial`)
                
               }}
               

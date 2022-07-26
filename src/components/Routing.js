@@ -11,27 +11,26 @@ import FinalSlide from "./Testing/FinalSlide";
 import Test from "./Testing/Test"
 import Tutorial1 from "./Tutorial1";
 import Tutorial2 from "./Tutorial2"
-import GenerateWorkerAndCampaignId from "./GenerateWorkerAndCampaignId";
+/*import GenerateWorkerAndCampaignId from "./GenerateWorkerAndCampaignId";*/
 import Payment from "./Payment";
 
 function Routing() {
   return (
     <>
       <Router>
-        <Routes>
-        <Route path="/" element={<GenerateWorkerAndCampaignId />} />
-          <Route path="/:workerId/:campaignId" element={<Questionaries />} />
-          <Route path="/:workerId/:campaignId/Description"  element={<Description />} />
-          <Route path="/:workerId/:campaignId/Tutorial" element={<Tutorial />} />
-          <Route path="/:workerId/:campaignId/Tutorial1" element={<Tutorial1 />} />
-          <Route path="/:workerId/:campaignId/Tutorial2" element={<Tutorial2 />} />
-          <Route path="/:workerId/:campaignId/Test" element={<Test />} />
-          <Route path="/:workerId/:campaignId/SlideShow" element={<SlideShow />} />
-          <Route path="/:workerId/:campaignId/SlideTwo" element={<SlideTwo />} />
-          <Route path="/:workerId/:campaignId/FinalSlide" element={<FinalSlide />} />
-          <Route path="/:workerId/:campaignId/Task" element={<Task />} />
-          <Route path="/:workerId/:campaignId/Payment" element={<Payment />} />
-          <Route path="/user/:Token" element={<Task />} />
+        <Routes> 
+               
+          <Route path="/:worker_id/:campaign_id/" element={<Questionaries />} />
+          <Route path="/:worker_id/:campaign_id/Description"  element={<Description />} />
+          <Route path="/:worker_id/:campaign_id/Tutorial" element={<Tutorial />} />
+          <Route path="/:worker_id/:campaign_id/Tutorial1" element={<Tutorial1 />} />
+          <Route path="/:worker_id/:campaign_id/Tutorial2" element={<Tutorial2 />} />
+          <Route path="/:worker_id/:campaign_id/Test" element={<Test />} />
+          <Route path="/:worker_id/:campaign_id/SlideShow" element={<SlideShow />} />
+          <Route path="/:worker_id/:campaign_id/SlideTwo" element={<SlideTwo />} />
+          <Route path="/:worker_id/:campaign_id/FinalSlide" element={<FinalSlide />} />
+          <Route path="/:worker_id/:campaign_id/Task" element={<Task />} />
+          <Route path="/:worker_id/:campaign_id/Payment" element={<Payment />} />         
         </Routes>
       </Router>
     </>

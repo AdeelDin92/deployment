@@ -6,11 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ;
 
 function Questionaries() {
-  const {workerId, campaignId} = useParams();
+  const {worker_id, campaign_id} = useParams();
 
   const [Questions, setQuestions] = useState({
-    campaign_id: campaignId,
-    worker_id: workerId,
+  
+    worker_id: worker_id,
+    campaign_id: campaign_id,
     Q1: "",
     Q2: "",
     Q3: "",
@@ -34,14 +35,14 @@ function Questionaries() {
       //https://crowdsourcingbackend.herokuapp.com/
      
 
-      const res = fetch("https://crowdsourcingbackend.herokuapp.com/",{
+      const res = fetch("https://crowdsourcingbackend.herokuapp.com/:worker_id/:campaign_id/",{
         method:"POST",
         headers:{
           "Content-type" : "application/json"
         },
-        body:JSON.stringify({
-          campaign_id: campaignId,
-          worker_id: workerId,
+        body:JSON.stringify({         
+          worker_id: worker_id,
+          campaign_id: campaign_id,
           Q1:Questions.Q1,
           Q2:Questions.Q2,
           Q3:Questions.Q3,
@@ -58,7 +59,7 @@ function Questionaries() {
       } else {
         console.log("Questions Successfull")
         console.log(res)        
-        navigate(`/${workerId}/${campaignId}/Description`)
+        navigate(`/${worker_id}/${campaign_id}/Description`)
       }
     
   }
@@ -80,7 +81,7 @@ function Questionaries() {
         className="d-flex align-items-center justify-content-center "
         style={{ minHeight: "100vh" }}
       >
-        <div className="w-100" style={{ maxWidth: "1000px" }}>
+        <div className="w-100 mt-3" style={{ maxWidth: "1000px" }}>
           <div className="form-container" style={{height:"120vh"}}>
             <form
               onSubmit={submitForm}
@@ -90,7 +91,7 @@ function Questionaries() {
                 Please fill out this Questionair ?
               </legend>
               <div className="mb-3">
-                <label className="mb-3">What is your Gender</label>
+                <label className="mb-3">What is your Gender?</label>
                 <p>
                   <input
                     type="radio"
@@ -354,7 +355,7 @@ function Questionaries() {
 
               <Button
                 type="submit"
-                className="mt-4"
+                className="mt-4 mb-4"
                 id="submitBtn"
                 onClick={check}
               >

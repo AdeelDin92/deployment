@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Tutorial2() {
 
-  const {workerId, campaignId} = useParams();
+  const {worker_id, campaign_id} = useParams();
 
 
 
@@ -30,7 +30,7 @@ const navigate = useNavigate();
 
           </div>
           <div className="col text-center">
-          <button  onClick={()=>navigate(`/${workerId}/${campaignId}/Task`)} className="next sum">
+          <button  onClick={()=>navigate(`/${worker_id}/${campaign_id}/Task`)} className="next sum">
               Next &raquo;
             </button>
           </div>

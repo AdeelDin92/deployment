@@ -1,37 +1,36 @@
 import React, { useState } from "react";
 import { SortableContainer, SortableElement } from "react-sortable-hoc";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import arrayMove from "array-move";
 import useStore from "../store";
 
-
 import Canvas from "./Canvas";
 import "../styles.css";
 
-
-
-const SortableItem = SortableElement(({ regionHash, region, sortIndex, onRemove }) => {
-  return (
-    <div
-      className="region"
-      style={{
-        boxShadow: `0 0 5px ${region.color}`,
-        border: `1px solid ${region.color}`,
-      }}
-    >
-      Region #{regionHash}
-      <button
-        onClick={() => {
-          onRemove(sortIndex);
+const SortableItem = SortableElement(
+  ({ regionHash, region, sortIndex, onRemove }) => {
+    return (
+      <div
+        className="region"
+        style={{
+          boxShadow: `0 0 5px ${region.color}`,
+          border: `1px solid ${region.color}`,
         }}
       >
-        Delete
-      </button>
-    </div>
-  );
-});
+        Region #{regionHash}
+        <button
+          onClick={() => {
+            onRemove(sortIndex);
+          }}
+        >
+          Delete
+        </button>
+      </div>
+    );
+  }
+);
 
 const SortableList = SortableContainer(({ items, onRemove }) => {
   return (
@@ -50,20 +49,16 @@ const SortableList = SortableContainer(({ items, onRemove }) => {
   );
 });
 function RegionList() {
-  const regions = useStore((s) => s.regions); 
+  const regions = useStore((s) => s.regions);
 
-  const campaignId = localStorage.getItem('campaignId');
-  const workerId = localStorage.getItem('workerId');
-  
-  const setRegions = useStore((s) => s.setRegions);  
+  const { worker_id, campaign_id } = useParams();
+
+  const setRegions = useStore((s) => s.setRegions);
   const [showCoordinates, setShowCoordinates] = useState(false);
   //const selectedId = useStore(s => s.selectedRigionId);
   //const selectRegion = useStore(s => s.selectRegion);
- //const isDrawing = useStore((state) => state.isDrawing);
- const navigate = useNavigate();
- 
-
-  
+  //const isDrawing = useStore((state) => state.isDrawing);
+  const navigate = useNavigate();
 
   const displayCordinates = () => {
     setShowCoordinates(!showCoordinates);
@@ -71,16 +66,13 @@ function RegionList() {
 
   const listCoordinates = () => <div></div>;
 
-
   //States for changing Image source on the Task page
   //States for changing Image source on the Task page
   const [imageSrc, setImgSrc] = useState(1);
   const [disabled, setDisabled] = useState(true); // state for next and previous image
   const [imageRegions, setImageRegions] = useState([]);
   const [canSave, setCanSave] = useState(false); // state for next and previous image
-  const [clicks,setClicks] = useState(0)
-  
-  
+  const [clicks, setClicks] = useState(0);
 
   //Annon function for next button
   const incrementImg = () => {
@@ -91,15 +83,15 @@ function RegionList() {
     }
 
     if (imageSrc === 4) {
-      setImgSrc(imageSrc + 1);      
+      setImgSrc(imageSrc + 1);
       let nextBtn = document.querySelector(".sum");
       nextBtn.innerHTML = "Continue";
-      setCanSave(true)
+      setCanSave(true);
       setClicks(clicks + 1);
       //navigate(`/${workerId}/${campaignId}/Payment`)
     }
     if (clicks === 4) {
-      navigate(`/${workerId}/${campaignId}/Payment`)
+      navigate(`/${worker_id}/${campaign_id}/Payment`);
     }
   };
 
@@ -118,70 +110,60 @@ function RegionList() {
     }
   };
 
-  //Clear drawings after an interval 
+  //Clear drawings after an interval
   const clearRegions = () => {
     setTimeout(() => {
       setRegions([]);
     }, 1000);
   };
-  
+
   // Function to correct region Id's
-  const saveCordinates = async () => {   
-    
+  const saveCordinates = async () => {
     if (regions.length > 0) {
       const imageRegion = {
         image_number: imageSrc,
-        regions
+        regions,
       };
 
-      setImageRegions([...imageRegions, imageRegion])
+      setImageRegions([...imageRegions, imageRegion]);
 
       setTimeout(async () => {
         if (canSave) {
           const saveData = {
-            campaign_id: campaignId,
-            worker_id: workerId,
-            coordinates: imageRegions
+            campaign_id: campaign_id,
+            worker_id: worker_id,
+            coordinates: imageRegions,
           };
-          const response = await fetch("https://crowdsourcingbackend.herokuapp.com/Task",{
-            method:"POST",
-            headers:{
-              "Content-type" : "application/json"
+          // eslint-disable-next-line
+          const response = await fetch("https://crowdsourcingbackend.herokuapp.com/:worker_id/:campaign_id/Task", {
+          
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
             },
-            body: JSON.stringify(saveData)
+            body: JSON.stringify(saveData),
           });
-  
-          console.log(imageRegions);
-          console.log('Returned response', response)
+
+          /*console.log(imageRegions);
+          console.log('Returned response', response)*/
         }
-      }, 1000)
+      }, 1000);
     }
 
-    console.log('image is ', imageSrc);
+    /*console.log('image is ', imageSrc);
     console.log('image regions are ', regions);
     console.log("number of cliks are" , clicks)
+    */
+  };
 
-  }
-
-
-  //Parent function for Task page 
+  //Parent function for Task page
   const wrappedNextFunc = async () => {
     displayCordinates();
     incrementImg();
-    clearRegions();  
+    clearRegions();
     saveCordinates();
-
-    /*---------------Backend Post request to save cordinates for Task Page----------*/
-    /*
-    const response = await axios.post('/coordinates', {data: JSON.stringify(regions)});
-    if (response.data.status === 200) {
-      incrementImg(); //Next Image
-      clearRegions(); // Clear current regions on the screen
-    }
-    */
-    /*---------------Backend Post request to save cordinates for Task Page----------*/
   };
-  
+
   //JSX for rendering on CLient
   return (
     <div>
@@ -197,10 +179,6 @@ function RegionList() {
         onRemove={(index) => {
           regions.splice(index, 1);
           setRegions(regions.concat());
-          
-          
-          
-
         }}
       />
       <div className="d-flex container justify-content-center mt-5">
@@ -212,7 +190,11 @@ function RegionList() {
           &laquo; Previous
         </button>
         <div style={{ width: "100px" }}></div>
-        <button onClick={wrappedNextFunc} className="next sum" disabled={regions.length === 0}>
+        <button
+          onClick={wrappedNextFunc}
+          className="next sum"
+          disabled={regions.length === 0}
+        >
           Next &raquo;
         </button>
         {showCoordinates && listCoordinates()}
