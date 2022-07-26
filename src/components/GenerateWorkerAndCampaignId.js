@@ -15,7 +15,7 @@ export default function GenerateWorkerAndCampaignId() {
   useEffect(() => {
     navigate(`/${workerId}/${campaignId}/`, { replace: true });
     // eslint-disable-next-line
-    
+    // eslint-disable-next-line
   }, []);
     
   return (
