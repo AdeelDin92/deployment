@@ -35,7 +35,7 @@ function Questionaries() {
       //https://crowdsourcingbackend.herokuapp.com/
      
 
-      const res = fetch("https://crowdsourcingbackend.herokuapp.com/:worker_id/:campaign_id/Questionair",{
+      const res = fetch("https://crowdsourcingbackend.herokuapp.com/:worker_id/:campaign_id/",{
         method:"POST",
         headers:{
           "Content-type" : "application/json"
