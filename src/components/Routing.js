@@ -20,7 +20,7 @@ function Routing() {
       <Router>
         <Routes> 
         <Route path="/" element={<GenerateWorkerAndCampaignId/>} />
-          <Route path="/:worker_id/:campaign_id/" element={<Questionaries />} />
+          <Route path="/:worker_id/:campaign_id/Questionair" element={<Questionaries />} />
           <Route path="/:worker_id/:campaign_id/Description"  element={<Description />} />
           <Route path="/:worker_id/:campaign_id/Tutorial" element={<Tutorial />} />
           <Route path="/:worker_id/:campaign_id/Tutorial1" element={<Tutorial1 />} />
