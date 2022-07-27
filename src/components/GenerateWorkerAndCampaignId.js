@@ -1,6 +1,7 @@
 /*import React, { useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 
 
@@ -13,13 +14,16 @@ export default function GenerateWorkerAndCampaignId() {
   const navigate = useNavigate();
    
   useEffect(() => {
-    navigate(`/${worker_id}/${campaign_id}/Questionair`, { replace: true });
+    navigate(`/${worker_id}/${campaign_id}/`, { replace: true });
     // eslint-disable-next-line
     // eslint-disable-next-line
   }, []);
     
   return (
-    <></>
+    <>
+    <Button onClick={(localStorage.clear())}></Button>
+    <h2>{campaign_id}</h2>
+    </>
   )
 }
 
@@ -34,4 +38,5 @@ const setLocalHost = () => {
     localStorage.setItem('worker_id', uuid);
   }
 }
+
 */

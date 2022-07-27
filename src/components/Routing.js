@@ -18,8 +18,7 @@ function Routing() {
   return (
     <>
       <Router>
-        <Routes> 
-        
+        <Routes>         
           <Route path="/:worker_id/:campaign_id/Questionair" element={<Questionaries />} />
           <Route path="/:worker_id/:campaign_id/Description"  element={<Description />} />
           <Route path="/:worker_id/:campaign_id/Tutorial" element={<Tutorial />} />
