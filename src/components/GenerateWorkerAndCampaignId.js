@@ -13,7 +13,7 @@ export default function GenerateWorkerAndCampaignId() {
   const navigate = useNavigate();
    
   useEffect(() => {
-    navigate(`/${worker_id}/${campaign_id}/Questionair`, { replace: true });
+    navigate(`/${worker_id}/${campaign_id}/Questionai`, { replace: true });
     // eslint-disable-next-line
     // eslint-disable-next-line
   }, []);
