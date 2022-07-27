@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 export default function GenerateWorkerAndCampaignId() {
   setLocalHost();
 
-  const campaignId = localStorage.getItem('campaignId');
-  const workerId = localStorage.getItem('workerId');
+  const campaign_id = localStorage.getItem('campaignId');
+  const worker_id = localStorage.getItem('workerId');
 
   const navigate = useNavigate();
    
   useEffect(() => {
-    navigate(`/${workerId}/${campaignId}/`, { replace: true });
+    navigate(`/${worker_id}/${campaign_id}/Questionair`, { replace: true });
     // eslint-disable-next-line
     // eslint-disable-next-line
   }, []);
