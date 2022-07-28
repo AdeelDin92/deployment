@@ -238,8 +238,8 @@ a.tip:hover span {
   margin-top: 6rem;
   vertical-align: middle;
 }
-/*Mobile devices (Iphone,Samsung)*/
-@media (max-width: 576px) {
+
+@media (max-width: 450px) {
   .card {
     height: 1200px !important;
   }
@@ -248,10 +248,152 @@ a.tip:hover span {
   }
   /*Questionair CSS */
   .form-container {
-    font-size: 12px;
+    font-size: 16px;
   }
   legend {
-    font-size: 18px !important;
+    font-size: 20px !important;
+    font-weight: 600;
+  }
+  label {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  /*Description CSS */
+  .body {
+    height: 120vh;
+  }
+
+  .main-container h1 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .main-container h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .main-container p {
+    font-size: 15px;
+  }
+  .Description-list img {
+    width: 40px;
+    height: 70%;
+  }
+  .Description-list h3 {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .Description-list ol li {
+    font-size: 14px;
+    padding-left: 5px;
+  }
+  .Description-list button {
+    background-color: #bbbbbb !important;
+  }
+  .Description-list button:hover {
+    background-color: #0f80d6 !important;
+  }
+  /*Tutorial */
+  .tutorial-container .col-lgl-6 {
+    width: 95% !important;
+    height: 320px;
+  }
+  .tutorial-container h1 {
+    font-size:1rem;
+  }
+  .tutorial-container p {
+    font-size:12px;
+  }
+
+  .btn-col {
+    width: 100%;
+    justify-content: center;
+  }
+  .btn-col .next {
+    width: 32%;
+    font-size: 12px;
+  }
+  .btn-col .previous {
+    font-size: 12px;
+  }
+  /*Test CSS*/
+  .header h1 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .header h5 {
+    font-size: 0.6rem;
+  }
+  .header img {
+    width: 30px;
+  }
+  .test-container {
+    height: 122vh;
+  }
+  .btn-col .next,.previous {
+    font-size:12px;
+  }
+  /*Task CSS*/
+  .wrapper h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .wrapper h5 {
+    font-size: 0.6rem;
+  }
+  .wrapper img {
+    width: 25px;
+  }
+  .wrapper p {
+    width:85px !important;
+  }
+  .wrapper .next,.previous {
+    font-size:12px;
+  }
+  .regions-list .region {
+    font-size:8px;
+  }
+  .regions-list button {
+    border: none;
+    background: #FCFCFC;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color:black;
+    font-size: 8px;
+    margin-left: 5px;
+
+  }
+  /*Payment CSS */
+  .payment-container h2 {
+    font-size: 0.8rem;
+  }
+  .payment-container h2 .mt-5 {
+    margin-top: 1rem !important;
+  }
+  .payment-box {
+    width: 90%;
+    height: 75px;
+  }
+  .payment-box h6 {
+    font-size: 0.4rem;
+  }
+}
+
+
+
+/*Mobile devices (Iphone,Samsung)*/
+@media (min-width:476px) and (max-width: 576px) {
+  .card {
+    height: 1200px !important;
+  }
+  .col-sm-6 {
+    margin-bottom: 40px !important;
+  }
+  /*Questionair CSS */
+  .form-container {
+    font-size: 16px;
+  }
+  legend {
+    font-size: 20px !important;
     font-weight: 600;
   }
   label {
@@ -294,16 +436,23 @@ a.tip:hover span {
   }
   /*Tutorial */
   .tutorial-container .col-lgl-6 {
-    width: 100% !important;
-    height: 450px;
+    width: 95% !important;
+    height: 400px;
+  }
+  .tutorial-container h1 {
+    font-size:1.2rem;
+  }
+  .tutorial-container p {
+    font-size:12px;
   }
 
   .btn-col {
     width: 100%;
     justify-content: center;
   }
-  .btn-col .next {
-    width: 15%;
+  .btn-col .next,.previous {
+    width: 20%;
+    font-size: 12px;
   }
   .header h1 {
     font-size: 1rem;
