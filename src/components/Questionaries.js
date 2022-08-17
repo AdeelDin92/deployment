@@ -307,7 +307,7 @@ function Questionaries() {
                   <input
                     type="radio"
                     name="Q6"
-                    value="Yess" 
+                    value="Yes" 
                     onChange={handleAnswers}
                     className="me-2"
                   />
@@ -333,7 +333,7 @@ function Questionaries() {
                   <input
                     type="radio"
                     name="Q7"
-                    value="Yess" 
+                    value="Yes" 
                     onChange={handleAnswers}
                     className="me-2"
                   />
