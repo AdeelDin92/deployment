@@ -115,42 +115,31 @@ function Test() {
             onClick={() => {
               if (page === TestTitle.length - 1) {
                 if (
-                  TestAnswers.Q1 === "A" &&
-                  TestAnswers.Q2 === "A" &&
-                  TestAnswers.Q3 === "B"
-                ) {
-                  testPost();
-                } else if (
-                  TestAnswers.Q1 === "A" &&
+                  TestAnswers.Q1 === "A" &&  //wrong
                   TestAnswers.Q2 === "B" &&
                   TestAnswers.Q3 === "A"
                 ) {
                   testPost();
                 } else if (
-                  TestAnswers.Q1 === "A" &&
-                  TestAnswers.Q2 === "B" &&
-                  TestAnswers.Q3 === "B"
-                ) {
-                  check();
-                } else if (
                   TestAnswers.Q1 === "B" &&
-                  TestAnswers.Q2 === "A" &&
+                  TestAnswers.Q2 === "B" &&
                   TestAnswers.Q3 === "A"
                 ) {
                   testPost();
                 } else if (
-                  TestAnswers.Q1 === "B" &&
+                  TestAnswers.Q1 === "A" &&
                   TestAnswers.Q2 === "A" &&
-                  TestAnswers.Q3 === "B"
-                ) {
-                  check();
-                } else if (
-                  TestAnswers.Q1 === "B" &&
-                  TestAnswers.Q2 === "B" &&
                   TestAnswers.Q3 === "A"
                 ) {
-                  check();
-                } else {
+                 testPost();
+                } else if (
+                  TestAnswers.Q1 === "A" &&
+                  TestAnswers.Q2 === "B" &&
+                  TestAnswers.Q3 === "B"
+                ) {
+                  testPost();
+                }             
+                 else {
                   check();
                 }
               } else {
