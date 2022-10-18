@@ -5,12 +5,11 @@ import Routing from "../components/Routing"
 
 
 function App() {  
-
+    /*Default*/
   return (
-    <>
-   
-        <Routing/>      
-           
+    <>  
+      <Routing/>     
+          
     </>
   );
 };
